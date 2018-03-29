@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/Firesphere/silverstripe-googlemapsfield.svg?style=svg)](https://circleci.com/gh/Firesphere/silverstripe-googlemapsfield)
+[![codecov](https://codecov.io/gh/Firesphere/silverstripe-googlemapsfield/branch/master/graph/badge.svg)](https://codecov.io/gh/Firesphere/silverstripe-googlemapsfield)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Firesphere/silverstripe-googlemapsfield/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Firesphere/silverstripe-googlemapsfield/?branch=master)
+
 # Google Places field
 
 Play with Google Places in your forms in SilverStripe
@@ -25,6 +29,8 @@ The fields given from places are:
 - administrative_area_level_1
 - country
 - postal_code
+
+If you want to change the fields, add custom hidden fields or remove some fields, you can do so via the `getExtraFields` and `setExtraFields` methods.
  
 
 You can only use this field _once_ per form, due to restrictions of the ID's of fields.

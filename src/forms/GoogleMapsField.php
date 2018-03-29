@@ -94,7 +94,7 @@ class GoogleMapsField extends TextField
     }
 
     /**
-     * @param array $field
+     * @param string $field
      */
     public function addExtraField($field)
     {

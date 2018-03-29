@@ -54,4 +54,60 @@ class GoogleMapsFieldTest extends SapphireTest
 
         $this->assertEquals($fields, $field->getHiddenFields());
     }
+
+    public function testGetSetExtraFields()
+    {
+        $field = GoogleMapsField::create('Test');
+
+        $extraFields = $field->getExtraFields();
+
+        $expected = [
+            'GoogleMapsLatField',
+            'GoogleMapsLngField',
+            'subpremise',
+            'street_number',
+            'route',
+            'sublocality_level_1',
+            'locality',
+            'administrative_area_level_1',
+            'country',
+            'postal_code'
+        ];
+
+        $this->assertEquals($expected, $extraFields);
+
+        $field->setExtraFields(['GoogleMapsLatField', 'GoogleMapsLngField']);
+
+        $extraFields = $field->getExtraFields();
+
+        $this->assertEquals(['GoogleMapsLatField', 'GoogleMapsLngField'], $extraFields);
+    }
+
+    public function testAddExtraFields()
+    {
+        $field = GoogleMapsField::create('Test');
+
+        $extraFields = $field->getExtraFields();
+
+        $expected = [
+            'GoogleMapsLatField',
+            'GoogleMapsLngField',
+            'subpremise',
+            'street_number',
+            'route',
+            'sublocality_level_1',
+            'locality',
+            'administrative_area_level_1',
+            'country',
+            'postal_code'
+        ];
+
+        $this->assertEquals($expected, $extraFields);
+
+        $field->addExtraField('premise');
+
+        $extraFields = $field->getExtraFields();
+
+        $this->assertEquals(array_merge($expected, ['premise']), $extraFields);
+    }
 }
