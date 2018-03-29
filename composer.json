@@ -13,7 +13,8 @@
     }
   ],
   "require": {
-    "silverstripe/framework": "^4.0"
+    "silverstripe/framework": "^4.0",
+    "silverstripe/siteconfig": "^4.0"
   },
   "require-dev": {
     "scriptfusion/phpunit-immediate-exception-printer": "^2.0",
