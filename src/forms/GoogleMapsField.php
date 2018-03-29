@@ -9,8 +9,15 @@ use SilverStripe\Forms\TextField;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\View\Requirements;
 
+/**
+ * Class GoogleMapsField
+ * @package Firesphere\GoogleMapsField\Forms
+ */
 class GoogleMapsField extends TextField
 {
+    /**
+     * @var array
+     */
     protected $extraFields = [
         'GoogleMapsLatField',
         'GoogleMapsLngField',
@@ -24,16 +31,31 @@ class GoogleMapsField extends TextField
         'postal_code'
     ];
 
+    /**
+     * @var array
+     */
     protected $customOptions = [];
 
 
+    /**
+     * GoogleMapsField constructor.
+     * @param $name
+     * @param null $title
+     * @param string $value
+     * @param null $maxLength
+     * @param Form|null $form
+     */
     public function __construct($name, $title = null, $value = '', $maxLength = null, Form $form = null)
     {
         $this->setAttribute('data-mapsfield', 'mapsfield');
         parent::__construct($name, $title, $value, $maxLength, $form);
     }
 
-    public function Field($properties = [])
+    /**
+     * @param array $properties
+     * @return \SilverStripe\ORM\FieldType\DBHTMLText
+     */
+    public function field($properties = [])
     {
         $config = SiteConfig::current_site_config();
 
@@ -43,6 +65,9 @@ class GoogleMapsField extends TextField
         return parent::Field($properties);
     }
 
+    /**
+     * @return string
+     */
     public function getHiddenFields()
     {
         $output = '';
