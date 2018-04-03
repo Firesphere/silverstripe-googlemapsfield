@@ -2,9 +2,7 @@ const targets = Array.from(document.body.querySelectorAll('input[data-mapsfield=
 const latField = document.getElementById('GoogleMapsLatField');
 const lngField = document.getElementById('GoogleMapsLngField');
 
-let options = {
-  types: ['address']
-};
+let options = {};
 let autoComplete;
 
 const fillAddress = () => {
@@ -15,8 +13,12 @@ const fillAddress = () => {
   lngField.setAttribute('value', location.geometry.location.lng());
 
   components.forEach((component) => {
-    let field = document.getElementById(component.types[0]);
-    field.setAttribute('value', component.long_name);
+    component.types.forEach((type) => {
+      const field = document.getElementById(type);
+      if (field) {
+        field.setAttribute('value', component.long_name);
+      }
+    });
   });
 };
 
