@@ -1,4 +1,4 @@
-const targets = document.body.querySelectorAll('input[data-mapsfield=mapsfield]');
+const targets = Array.from(document.body.querySelectorAll('input[data-mapsfield=mapsfield]'));
 const latField = document.getElementById('GoogleMapsLatField');
 const lngField = document.getElementById('GoogleMapsLngField');
 
