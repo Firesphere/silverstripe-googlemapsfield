@@ -6,6 +6,7 @@ let options = {};
 let autoComplete;
 
 const fillAddress = () => {
+  const event = new Event('change');
   const location = autoComplete.getPlace();
   const components = location.address_components;
 
@@ -17,6 +18,7 @@ const fillAddress = () => {
       const field = document.getElementById(type);
       if (field) {
         field.setAttribute('value', component.long_name);
+        field.dispatchEvent(event);
       }
     });
   });
