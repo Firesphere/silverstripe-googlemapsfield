@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/Firesphere/silverstripe-googlemapsfield.svg?style=svg)](https://circleci.com/gh/Firesphere/silverstripe-googlemapsfield)
+[![CircleCI](https://img.shields.io/circleci/project/github/Firesphere/silverstripe-googlemapsfield.svg)](https://circleci.com/gh/Firesphere/silverstripe-googlemapsfield)
 [![codecov](https://codecov.io/gh/Firesphere/silverstripe-googlemapsfield/branch/master/graph/badge.svg)](https://codecov.io/gh/Firesphere/silverstripe-googlemapsfield)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Firesphere/silverstripe-googlemapsfield/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Firesphere/silverstripe-googlemapsfield/?branch=master)
 
