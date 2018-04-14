@@ -50,7 +50,17 @@ class GoogleMapsFieldTest extends SapphireTest
     {
         $field = GoogleMapsField::create('Test');
 
-        $fields = '<input type="hidden" name="GoogleMapsLatField" class="hidden" id="GoogleMapsLatField" /><input type="hidden" name="GoogleMapsLngField" class="hidden" id="GoogleMapsLngField" /><input type="hidden" name="subpremise" class="hidden" id="subpremise" /><input type="hidden" name="street_number" class="hidden" id="street_number" /><input type="hidden" name="route" class="hidden" id="route" /><input type="hidden" name="sublocality_level_1" class="hidden" id="sublocality_level_1" /><input type="hidden" name="locality" class="hidden" id="locality" /><input type="hidden" name="administrative_area_level_1" class="hidden" id="administrative_area_level_1" /><input type="hidden" name="country" class="hidden" id="country" /><input type="hidden" name="postal_code" class="hidden" id="postal_code" />';
+        $fields = '<input type="hidden" name="GoogleMapsLatField" class="hidden" id="GoogleMapsLatField" />'
+            . '<input type="hidden" name="GoogleMapsLngField" class="hidden" id="GoogleMapsLngField" />'
+            . '<input type="hidden" name="subpremise" class="hidden" id="subpremise" />'
+            . '<input type="hidden" name="street_number" class="hidden" id="street_number" />'
+            . '<input type="hidden" name="route" class="hidden" id="route" />'
+            . '<input type="hidden" name="sublocality_level_1" class="hidden" id="sublocality_level_1" />'
+            . '<input type="hidden" name="locality" class="hidden" id="locality" />'
+            . '<input type="hidden" name="administrative_area_level_1" class="hidden"'
+            . ' id="administrative_area_level_1" />'
+            . '<input type="hidden" name="country" class="hidden" id="country" />'
+            . '<input type="hidden" name="postal_code" class="hidden" id="postal_code" />';
 
         $this->assertEquals($fields, $field->getHiddenFields());
     }

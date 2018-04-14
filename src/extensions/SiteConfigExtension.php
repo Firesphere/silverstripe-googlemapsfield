@@ -25,8 +25,14 @@ class SiteConfigExtension extends DataExtension
         parent::updateCMSFields($fields);
 
         $fields->addFieldsToTab('Root.GoogleMaps', [
-            TextField::create('MapsBrowserKey', _t(static::class . 'BROWSERKEY', 'Google API Browser key for address search')),
-            TextField::create('MapsServerKey', _t(static::class . 'SERVERKEY', 'Google API Server key for geolocation')),
+            TextField::create(
+                'MapsBrowserKey',
+                _t(self::class . 'BROWSERKEY', 'Google API Browser key for address search')
+            ),
+            TextField::create(
+                'MapsServerKey',
+                _t(self::class . 'SERVERKEY', 'Google API Server key for geolocation')
+            ),
         ]);
     }
 }
