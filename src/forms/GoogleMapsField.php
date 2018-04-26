@@ -36,6 +36,10 @@ class GoogleMapsField extends TextField
      */
     protected $customOptions = [];
 
+    /**
+     * @var string
+     */
+    protected $customisationsVarName;
 
     /**
      * GoogleMapsField constructor.
@@ -48,6 +52,7 @@ class GoogleMapsField extends TextField
     public function __construct($name, $title = null, $value = '', $maxLength = null, Form $form = null)
     {
         $this->setAttribute('data-mapsfield', 'mapsfield');
+        $this->setCustomisationsVarName($name . 'Customisations');
         parent::__construct($name, $title, $value, $maxLength, $form);
     }
 
@@ -74,7 +79,7 @@ class GoogleMapsField extends TextField
     {
         $output = '';
         foreach ($this->extraFields as $field) {
-            $output .= HiddenField::create($field)->Field();
+            $output .= HiddenField::create($this->Name . $field)->Field();
         }
         return $output;
     }
@@ -117,5 +122,21 @@ class GoogleMapsField extends TextField
     public function setCustomOptions($customOptions)
     {
         $this->customOptions = $customOptions;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCustomisationsVarName()
+    {
+        return $this->customisationsVarName;
+    }
+
+    /**
+     * @param string $varName
+     */
+    public function setCustomisationsVarName($varName)
+    {
+        $this->customisationsVarName = $varName;
     }
 }
