@@ -3,8 +3,21 @@ const targets = Array.from(document.body.querySelectorAll('input[data-mapsfield=
 let options = {};
 let autoComplete = [];
 
+const CreateNewEvent = (eventName) => {
+  let event;
+
+  if (typeof (Event) === 'function') {
+    event = new Event(eventName);
+  } else {
+    event = document.createEvent('Event');
+    event.initEvent(eventName, true, true);
+  }
+
+  return event;
+};
+
 const fillAddress = (fieldName) => {
-  const event = new Event('change');
+  const event = new CreateNewEvent('change');
   const location = autoComplete[fieldName].getPlace();
   const components = location.address_components;
   const latField = document.getElementById(fieldName+'GoogleMapsLatField');
