@@ -1,5 +1,5 @@
 <input $AttributesHTML />
 $HiddenFields.RAW
 <script type="text/javascript">
-    var customisations = $CustomOptions.RAW;
+    var $CustomisationsVarName.RAW = $CustomOptions.RAW;
 </script>
