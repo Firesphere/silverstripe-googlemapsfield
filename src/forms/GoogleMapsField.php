@@ -113,7 +113,7 @@ class GoogleMapsField extends TextField
      */
     public function getCustomOptions()
     {
-        return Convert::array2json($this->customOptions);
+        return json_encode($this->customOptions);
     }
 
     /**
