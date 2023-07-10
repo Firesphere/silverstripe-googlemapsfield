@@ -65,7 +65,7 @@ class GoogleMapsField extends TextField
         $config = SiteConfig::current_site_config();
 
         Requirements::javascript(
-            'https://maps.googleapis.com/maps/api/js?key=' . $config->MapsBrowserKey . '&libraries=places'
+            'https://maps.googleapis.com/maps/api/js?key=' . $config->MapsBrowserKey . '&libraries=places&callback=Function.prototype'
         );
         Requirements::javascript('firesphere/googlemapsfield:client/dist/main.js');
 
