@@ -21,7 +21,7 @@
     "silverstripe/siteconfig": "^4.0|^5.0"
   },
   "require-dev": {
-    "phpunit/PHPUnit": "^5.7|^9"
+    "phpunit/phpunit": "^5.7|^9"
   },
   "extra": {
     "installer-name": "googlemapsfield",
